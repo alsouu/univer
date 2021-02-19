@@ -1,0 +1,58 @@
+﻿@page
+@model univer.Pages.ProfileModel
+@{
+    ViewData["Title"] = "Профиль";
+    var fullName = $"{Model.ProfileResponse.LastName} {Model.ProfileResponse.FirstName} {Model.ProfileResponse.Patronymic}";
+
+    Func<string, string> renderName = username => fullName.Length > 2 ? fullName : username;
+
+}
+<div style='margin-top: 90px;' class='container'>
+    <div class='row'>
+        <div class='col-4 offset-1'>
+            <div class="card" style="width: 100%;">
+                <img src="./profile_pic.jpg" class="card-img-top" alt="...">
+                <div class="d-flex justify-content-center card-body">
+                    <button type="button" class="btn btn-outline-info">Сменить аву</button>
+                </div>
+            </div>
+        </div>
+        <div class='col-5 '>
+            <ul class="list-group list-group-flush">
+                <li class="row list-group-item">
+                    <div class='d-flex justify-content-center'>
+                        <h6 class='col-3'>Имя:</h6>
+                        <p class='text-center col-9'>Майк</p>
+                    </div>
+
+                </li>
+                <li class="row list-group-item">
+                    <div class='d-flex justify-content-center'>
+                        <h6 class='col-3'>Фамилия:</h6>
+                        <p class='text-center col-9'>Вазовски</p>
+                    </div>
+                </li>
+                <li class="row list-group-item">
+                    <div class='d-flex justify-content-center'>
+                        <h6 class='col-3'>Группа:</h6>
+                        <p class='text-center col-9'>11-228</p>
+                    </div>
+                </li>
+
+                <li class="row list-group-item">
+                    <div class='d-flex justify-content-center'>
+                        <h6 class='col-3'>Возраст:</h6>
+                        <p class='text-center col-9'>11</p>
+                    </div>
+                </li>
+
+                <li class="row list-group-item">
+                    <div class='d-flex justify-content-center'>
+                        <h6 class='col-3'>Любимый преподаватель:</h6>
+                        <p class='text-center col-9'></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
